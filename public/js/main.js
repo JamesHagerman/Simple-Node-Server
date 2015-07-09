@@ -31,7 +31,7 @@ var Socket = (function () {
 
 
 function init() {
-  Socket.load();
+  Socket.init();
 }
 
 

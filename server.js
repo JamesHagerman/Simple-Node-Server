@@ -2,7 +2,7 @@
 // that can be picked up by the app and configured automatically. USE THEM!
 // I grabbed this from: https://developers.openshift.com/en/node-js-project-structure.html
 //
-var server_port = process.env.OPENSHIFT_NODEJS_PORT || config.app.port;
+var server_port = process.env.OPENSHIFT_NODEJS_PORT || '8080';
 var server_ip_address = process.env.OPENSHIFT_NODEJS_IP || '0.0.0.0';
 
 var express = require('express');
@@ -17,13 +17,13 @@ var fs = require ('fs');
 app.use(compression({
   threshold: 512
 }));
-app.use(sassMiddleware({
-      src: __dirname + '/sass',
-      dest: __dirname + '/public/css',
-      debug: true,
-      // outputStyle: 'compressed',
-      prefix: '/css'
-  }));
+// app.use(sassMiddleware({
+//       src: __dirname + '/sass',
+//       dest: __dirname + '/public/css',
+//       debug: true,
+//       // outputStyle: 'compressed',
+//       prefix: '/css'
+//   }));
 app.use(express.static(__dirname + '/public'));
 
 
